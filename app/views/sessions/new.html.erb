@@ -1,0 +1,30 @@
+<div class="sessions">
+  <div class="page-container">
+    <div class="background-khai">
+      <div class= "whitefont">
+        <h1>Login</h1>
+        <%= form_for(:user, url: sessions_path, html: { id: "user-login-form" }) do |f| %>
+        <%= f.text_field :email, required: true, id: "user_email_field", class: 'username', placeholder: "Username"%>
+        <%= f.password_field :password, required: true, id: "user_password_field", class: 'password', placeholder: "Password" %>
+        <div class="text-center">
+          <button name="commit" value="Login" data-disabled-with="login">
+            Sign Me In
+          </button>
+          <% end %>
+        </div>
+
+        <div class="connect">
+          <p>
+            or connect with:
+          </p>
+
+        </div>
+        <!-- <a href="https://facebook.com">Facebook</a> -->
+
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to "/auth/facebook" do %>
+<%= fa_icon 'facebook-official 5x' %>
+<% end %>

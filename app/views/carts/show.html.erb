@@ -1,0 +1,50 @@
+<h1> Your Cart </h1>
+
+<% if @items.empty? %>
+Your Cart Is Currently empty
+<% else %>
+<% end %>
+
+<% total = 0 %>
+
+<ul>
+  <% @items.each do |item| %>
+  <li>
+    <br>
+    <%= link_to item.title, items_path %>
+    <br>
+    <%= number_to_currency(item.price, :unit => 'RM') %>
+    <br>
+
+    <%= form_tag update_item_path(id: item), method: :patch do %>
+
+    <div class = "">
+      <%= label_tag "Quantity:", nil, class: "" %>
+      <%= text_field_tag :quantity, item.quantity %>
+      <%= submit_tag 'Update', class: "button btn-primary" %>
+      <% end %>
+
+      <br>
+      <br>
+
+      <%= link_to "Remove", remove_item_path(id: item), class: 'btn btn-info', method: :delete %>
+
+      <br>
+    </div>
+  </li>
+
+  <% end %>
+  <br>
+  Total Price : <%= number_to_currency(@total_price, :unit => 'RM') %>
+  <hr>
+
+<h2> Total Price : <%= number_to_currency(@total_price, :unit => 'RM') %> </h2>
+
+<br>
+
+  <%= link_to "Checkout with BillPliz", orders_path(price: @total_price), method: :post, class: "btn btn-primary" %>
+  <br>
+  <br>
+  <%= link_to "Checkout wtih BrainTree", checkout_path(price: @total_price), class: "btn btn-primary" %>
+
+</ul>

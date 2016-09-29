@@ -1,0 +1,47 @@
+.about {
+  .beautifulfonts {
+    font-size: 45px;
+    font-family: 'Sigmar One';
+    color: black;
+  }
+
+  .beautifulwords {
+    color: black;
+  }
+
+  .backgroundpic {
+    background-image: asset-url("Party.jpg");
+    background-size: contain;
+  }
+
+  .aboutcontainer {
+    font-size: 25px;
+    font-family: 'Libre Baskerville', sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+
+  .aboutelement {
+  flex: 0 0 50%;
+  line-height: 200%;
+  background-color: white;
+  padding: 15px;
+  margin: 50px;
+  }
+
+  .contactmecontainer {
+    display: flex;
+    max-width: 1200;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contactme {
+    flex: 1 0 300px;
+    margin: 0px 10px;
+  }
+
+  .break {
+    height: calc(100vh-30px);
+  }
+}

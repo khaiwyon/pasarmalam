@@ -1,0 +1,39 @@
+  .header{
+
+  #header {
+  z-index: 1;
+}
+
+.navbar-header {
+  font-size: 24px;
+  color: #FFC300;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: black;
+  border-color: black;
+  font-size: 28px;
+
+}
+
+.navbar-collapse {
+  color: black;
+}
+
+.navbar-default {
+  border : 0
+}
+
+a, a:visited{
+  color: white;
+  font-size: 24px;
+  }
+}
+
+.search-bar {
+  width: 500px;
+  height: 40px;
+  font-family: 24px;
+
+}

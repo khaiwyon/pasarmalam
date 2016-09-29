@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+1. Git clone the repo
+2. Do your work on your local branch
+3. commit to your branch, submit pull request
+4. review code, if ok merge to master
+

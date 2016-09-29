@@ -1,0 +1,23 @@
+<div class="users">
+  <div class="background-khai">
+    <div class="page-container">
+      <div class= "whitefont">
+        <%= form_for(@user, url: user_path(@user), html: { id: "user-update-form" }) do |f| %>
+        <h1 class="edit text-center">
+          Update User Account
+        </h1>
+        <%= form_for(@user, url: users_path, html: { id: "user-create-form" }) do |f| %>
+        <%= f.text_field :username, required: true, id: "username_field", class: 'username', placeholder: "Username" %>
+        <%= f.text_field :email, required: true, id: "user_email_field", class: 'email', placeholder: "Email" %>
+        <%= f.password_field :password, required: true, id: "user_password_field", class: 'password', placeholder: " Password" %>
+        <div class="form-group text-center">
+          <button name="commit" value="Login" data-disabled-with="login">
+            Update Credentials
+          </button>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

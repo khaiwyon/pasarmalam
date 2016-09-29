@@ -1,0 +1,26 @@
+<div class= "items">
+  <h1> Item
+  </h1>
+
+  <p>
+    <strong> Ticket name: </strong>
+    <%= @ticket.title %>
+  </p>
+
+  <p>
+    <strong> Description: </strong>
+    <%= @ticket.body %>
+  </p>
+
+  <p>
+    <strong> Image: </strong>
+    <%= image_tag @ticket.image, class: "ticket-image"%>
+  </p>
+
+  <p>
+    <strong> Price: </strong>
+    <%= @ticket.price %>
+  </p>
+
+  <%= link_to 'Back', items_path %>
+</div>

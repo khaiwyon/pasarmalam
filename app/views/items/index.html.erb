@@ -1,0 +1,63 @@
+<div class = "tickets">
+  <div class = "ticketbackground">
+    <h1 style="margin-top:0 !important;">
+      Tickets
+    </h1>
+
+    <% if @tickets.any? %>
+    <section class = "ticketcontainer">
+      <% @tickets.each do |ticket| %>
+      <div class = "ticketelement text-center">
+        <div class = "titlefont">
+          <%= ticket.title %><hr>
+        </div>
+        <%= image_tag ticket.image, class: "ticket-image"%>
+        <hr>
+        <%= ticket.body %>
+        <%= number_to_currency(ticket.price, :unit => 'RM') %>
+        <hr>
+        <%= link_to 'Add', add_item_path(id: ticket, quantity: 1), class: "btn btn-info", method: :post, remote: true %>
+        <div class="btn btn-success" data-toggle="modal" data-target="#modal-<%=ticket.id%>">
+          Show
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-<%=ticket.id%>">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title"> Ticket Details </h3>
+              <div class="modal-body">
+                <p>
+                  <strong> Ticket name: </strong>
+                  <%= ticket.title %>
+                </p>
+
+                <p>
+                  <strong> Description: </strong>
+                  <%= ticket.body %>
+                </p>
+
+                <p>
+                  <strong> Image: </strong>
+                  <%= image_tag ticket.image, class: "ticket-image"%>
+                </p>
+
+                <p>
+                  <strong> Price: </strong>
+                  <%= number_to_currency(ticket.price, :unit => 'RM') %>
+                </p>
+              </div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </section>
+    <% end %>
+    <%= link_to 'Proceed to Cart', cart_path, class: "btn btn-default button3 btn-lg" %>
+  </div>
+
+
+</div>

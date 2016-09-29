@@ -1,0 +1,15 @@
+<div class="users">
+  <div class="page-container">
+    <div class="background-khai">
+      <div class="whitefont">
+        <h1> Create New User </h1>
+      </div>
+      <%= form_for(@user, url: users_path, html: { id: "user-create-form" }) do |f| %>
+      <%= f.text_field :username, required: true, id: "username_field", class: 'username', placeholder: "Username" %>
+      <%= f.text_field :email, required: true, id: "user_email_field", class: 'email', placeholder: "Email" %>
+      <%= f.password_field :password, required: true, id: "user_password_field", class: 'password', placeholder: "Password" %>
+      <%= f.submit "Create User", class: "btn btn-default button2" %>
+      <% end %>
+    </div>
+  </div>
+</div>
